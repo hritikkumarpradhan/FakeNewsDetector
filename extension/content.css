@@ -1,0 +1,107 @@
+/* content.css - Styles for injected TruthLens UI */
+
+.truthlens-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.truthlens-verify-btn {
+  background-color: transparent;
+  border: 1px solid #1da1f2;
+  color: #1da1f2;
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.truthlens-verify-btn:hover:not(:disabled) {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+.truthlens-verify-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  border-color: #657786;
+  color: #657786;
+}
+
+.truthlens-verify-btn.btn-done {
+  border-color: #17bf63;
+  color: #17bf63;
+}
+
+/* Tooltip Result Box */
+.truthlens-result {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  width: 320px;
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 12px;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Hidden by default, shown on hover when present */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.truthlens-wrapper:hover .truthlens-result:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.truthlens-result.hidden {
+  display: none;
+}
+
+.tl-header {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.tl-danger {
+  background-color: #ffeaea;
+  color: #e0245e;
+}
+
+.tl-warning {
+  background-color: #fff9d6;
+  color: #fca130;
+}
+
+.tl-safe {
+  background-color: #e8fdf0;
+  color: #17bf63;
+}
+
+.tl-summary {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #14171a;
+  line-height: 1.4;
+}
+
+.tl-summary li {
+  margin-bottom: 4px;
+}

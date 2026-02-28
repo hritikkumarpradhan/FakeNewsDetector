@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "TruthLens: Fake News Detector",
+    "version": "1.0.0",
+    "description": "AI-powered Chrome Extension to verify credibility of news articles and tweets with DistilBERT and BART.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "host_permissions": [
+        "*://*.twitter.com/*",
+        "*://twitter.com/*",
+        "*://x.com/*",
+        "http://127.0.0.1:8000/*",
+        "http://localhost:8000/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Analyze with TruthLens"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.twitter.com/*",
+                "*://twitter.com/*",
+                "*://x.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "content.css"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}

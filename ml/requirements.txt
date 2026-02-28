@@ -1,0 +1,29 @@
+# ── ML Pipeline Dependencies ────────────────────────────────────────────────
+# Install with: pip install -r requirements.txt
+
+# Core ML
+torch>=2.1.0
+transformers>=4.38.0,<5.0.0
+datasets>=2.18.0
+evaluate>=0.4.0
+accelerate>=0.27.0
+scikit-learn>=1.4.0
+numpy>=1.26.0
+
+# Tokenizers & NLP
+tokenizers>=0.15.0
+sentencepiece>=0.1.99
+
+# Data processing
+pandas>=2.2.0
+pyarrow>=15.0.0
+
+# Training metrics
+seqeval>=1.2.2
+
+# Dataset download
+kaggle>=1.6.0
+
+# Utilities
+tqdm>=4.66.0
+requests>=2.31.0
